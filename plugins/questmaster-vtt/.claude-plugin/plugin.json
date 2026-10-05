@@ -1,8 +1,9 @@
 {
   "name": "questmaster-vtt",
   "displayName": "QuestMaster VTT",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Prep your QuestMaster VTT campaign with Claude. It reads your campaign, drafts NPCs, factions, plot, sessions, fights, items, maps and table screens for you to approve, and follows genre packs and writing styles. Live play stays yours.",
+  "icon": "./assets/icon.png",
   "author": {
     "name": "QuestMaster VTT",
     "url": "https://questmastervtt.com"
