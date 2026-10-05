@@ -49,7 +49,7 @@ If the truth paragraph is missing and the DM has not said who did it, ask that o
 - Give each clue a small `upsert_plot_node` as well, and `link_plot_nodes` from the clue to the revelation it supports. The plot board then shows at a glance which revelation has fewer than three incoming clues. Links cannot loop: draw clues into revelations and revelations into the scenes they open, and record backward pointers in the clue's text rather than as a line.
 - Draft each **scene** as an `upsert_session_beat` in the session where it is most likely to be played. Mark the entry scenes and list which clues each beat holds; beats are available, not ordered.
 - Draft suspects with `upsert_npc` (alibi, what they hide, what they lie about, tell). Draft the culprit's cover-up moves as an `upsert_thread` whose urgency rises each day: that is the proactive clock.
-- Mark evidence on the crime scene with `annotate_map`, hidden until shown, and offer a `build_cue_list` of handouts and portraits (from `generate_image`) for the DM to fire. Finish with `get_changeset`, recap, and `request_approval`.
+- Mark evidence on the crime scene with `annotate_map`, hidden until shown, and offer a `build_cue_list` of handouts and portraits (the DM makes portraits in the app) for the DM to fire. Finish with `get_changeset`, recap, and `request_approval`.
 
 ## References
 

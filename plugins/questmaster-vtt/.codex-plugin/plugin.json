@@ -1,6 +1,6 @@
 {
   "name": "questmaster-vtt",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Prep your QuestMaster VTT campaign. It reads your campaign, drafts NPCs, factions, plot, sessions, fights, items, maps and table screens for you to approve, and follows genre packs and writing styles. Live play stays yours.",
   "author": {
     "name": "QuestMaster VTT",

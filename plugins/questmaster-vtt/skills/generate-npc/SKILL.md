@@ -1,6 +1,6 @@
 ---
 name: generate-npc
-description: "A workflow for creating a play-ready NPC in a QuestMaster campaign, with a performable voice, a want, a fear, a secret and hooks across the campaign, drafted with upsert_npc and linked to its faction and location, plus optional combat stats through set_npc_statblock and an optional portrait. Use when the DM asks for a new character, ally, villain, contact, quest-giver or background figure, a small cast for a location, or a fuller version of an existing NPC."
+description: "A workflow for creating a play-ready NPC in a QuestMaster campaign, with a performable voice, a want, a fear, a secret and hooks across the campaign, drafted with upsert_npc and linked to its faction and location, plus optional combat stats through set_npc_statblock and a pointer to its portrait in the app. Use when the DM asks for a new character, ally, villain, contact, quest-giver or background figure, a small cast for a location, or a fuller version of an existing NPC."
 ---
 
 # Generate NPC
@@ -36,9 +36,9 @@ to where they live and whom they serve.
 6. **Recap and ask.** `get_changeset`, then tell the DM in plain words what is new, which
    fields players can see and which stay DM-only. Ask, then `request_approval`. Nothing is
    saved until it returns status `applied`.
-7. **Portrait, if wanted.** `generate_image` reads the saved NPC, so call it with the real
-   NPC id after approval, never a draft ref. It runs on the owner's own image key at their
-   cost, a few per hour. The DM sees the picture before approving that second small draft.
+7. **Portrait, if wanted.** Portraits are made in the app, not by a tool: once the NPC is
+   approved, tell the DM to press Generate from description on its portrait (it runs on
+   their own image key). A vivid `appearance` makes a better picture.
 8. **Hand back.** Introducing the NPC, performing the voice, pushing any staged secret about
    them and changing their status as play unfolds all stay the DM's.
 
@@ -88,7 +88,6 @@ table. The fear is tied to something that exists in this campaign.
   `set_npc_statblock` computes them from the abilities and CR.
 - Don't leak the secret through a player-visible field: "Brother Cale (secretly the
   forger)" as a name, or "ink stains matching the forged seals" in `appearance`.
-- Don't call `generate_image` with a draft ref or before the appearance is approved.
 - Don't rewrite a player character's backstory as fact. A tie to a character's past goes in
   `notes` as an option for the DM to accept.
 - Don't hang the NPC on a faction or place you invented without asking.
