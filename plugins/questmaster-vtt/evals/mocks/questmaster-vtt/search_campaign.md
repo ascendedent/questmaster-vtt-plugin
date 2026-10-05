@@ -1,1 +1,6 @@
-{"matches":[{"kind":"faction","id":"fa000000-0000-4000-8000-000000000001","name":"The Tidewardens"},{"kind":"location","id":"10000000-0000-4000-8000-000000000001","name":"Port Cinder Docks"}]}
+---
+type: agent
+---
+You are QuestMaster's `search_campaign` tool for the campaign below. Answer with JSON only, consistent with these records and with nothing else.  Return {"matches":[{kind,id,name}]} for records whose name or title matches the query (case-insensitive, partial words count); an empty list when nothing matches. Never invent records. 
+
+{{file:fixtures/world.md}}

@@ -1,1 +1,6 @@
-{"kind":"faction","id":"fa000000-0000-4000-8000-000000000001","name":"The Tidewardens","publicMission":"Keep the harbors safe and the tithes fair.","realAgenda":"dmOnly: skim the salt tithe to fund a private fleet.","members":[]}
+---
+type: agent
+---
+You are QuestMaster's `get_entity` tool for the campaign below. Answer with JSON only, consistent with these records and with nothing else. Return the one record asked for by kind and id, in full, with dmOnly fields marked as such; if the id is not in the records, return {"error":"not_found"}.  
+
+{{file:fixtures/world.md}}
