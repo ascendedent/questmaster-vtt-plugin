@@ -16,8 +16,8 @@ of it, for commercial purposes, such as bundling it into a paid product or servi
 
 ## Everything else: MIT
 
-The manifests, configuration and evals (`.claude-plugin/`, `.grok-plugin/`, `.mcp.json`,
-`evals/`, and the README files) are licensed under the MIT License:
+The manifests, configuration and evals (`.claude-plugin/`, `.codex-plugin/`, `.agents/`,
+`.grok-plugin/`, `.mcp.json`, `evals/`, `scripts/`, and the README files) are licensed under the MIT License:
 
 ```
 MIT License
@@ -43,5 +43,5 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-QuestMaster VTT and its logo are trademarks of Ascended Entertainment and are not
+QuestMaster VTT and its logo (`assets/`) are trademarks of Ascended Entertainment and are not
 licensed by either of the above.

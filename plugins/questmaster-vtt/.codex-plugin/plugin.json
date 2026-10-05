@@ -1,0 +1,47 @@
+{
+  "name": "questmaster-vtt",
+  "version": "0.1.4",
+  "description": "Prep your QuestMaster VTT campaign. It reads your campaign, drafts NPCs, factions, plot, sessions, fights, items, maps and table screens for you to approve, and follows genre packs and writing styles. Live play stays yours.",
+  "author": {
+    "name": "QuestMaster VTT",
+    "url": "https://questmastervtt.com"
+  },
+  "homepage": "https://questmastervtt.com/help/agents",
+  "repository": "https://github.com/ascendedent/questmaster-vtt-plugin",
+  "license": "CC-BY-NC-4.0 AND MIT",
+  "keywords": [
+    "dnd",
+    "ttrpg",
+    "dungeon master",
+    "game master",
+    "campaign prep",
+    "vtt",
+    "questmaster"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "QuestMaster VTT",
+    "shortDescription": "Prep your tabletop campaign",
+    "longDescription": "QuestMaster VTT is a web app for Game Masters running tabletop RPGs, with full Dungeons & Dragons 5e support. This plugin connects ChatGPT to your QuestMaster account so it can help you prep your campaigns.\n\nWhat it does\n- Reads your campaign: NPCs, factions, plot threads, story arcs, sessions, locations, the party, encounters, monsters, items, shops and maps.\n- Drafts prep for you: NPCs and factions, plot threads and session outlines, fights built from your monster roster, homebrew items and shops, map notes and table screens.\n- Follows 12 genre packs (from heists and political intrigue to gothic horror and hexcrawls) and 6 writing styles, so what it drafts fits your campaign's tone.\n\nYou stay in control\n- Nothing is saved until you approve it. Every draft comes with a link to the Agent changes page in QuestMaster, where you approve all of it, some of it, or none.\n- Anything you approve can be undone from the same page.\n- Live play stays yours: it never starts a fight, opens a shop, shows a map to your players or reveals a secret.\n\nGetting started\nYou need a QuestMaster VTT account (free to start at questmastervtt.com). When you connect, QuestMaster asks which campaigns ChatGPT may open, whether it may draft changes or only read, and which tools it gets. Drafting changes is on the Adept plan and higher; on the free Apprentice plan ChatGPT can read your campaigns. Change or revoke the connection any time on Account > Connections.",
+    "developerName": "QuestMaster VTT",
+    "category": "Creativity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://questmastervtt.com",
+    "supportURL": "https://questmastervtt.com/help",
+    "privacyPolicyURL": "https://questmastervtt.com/legal/privacy",
+    "termsOfServiceURL": "https://questmastervtt.com/legal/terms",
+    "defaultPrompt": [
+      "Catch me up on my campaign's open plot threads",
+      "Draft three NPCs for the town my party reaches next",
+      "Plan a tough fight for my party's next session"
+    ],
+    "brandColor": "#13553C",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/icon.png",
+    "screenshots": []
+  }
+}

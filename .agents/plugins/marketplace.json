@@ -1,0 +1,20 @@
+{
+  "name": "questmaster-vtt",
+  "interface": {
+    "displayName": "QuestMaster VTT"
+  },
+  "plugins": [
+    {
+      "name": "questmaster-vtt",
+      "source": {
+        "source": "local",
+        "path": "./plugins/questmaster-vtt"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Creativity"
+    }
+  ]
+}
