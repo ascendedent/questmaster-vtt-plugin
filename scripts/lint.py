@@ -4,7 +4,7 @@
 Checks: frontmatter (name == folder, a "Use when" description under 1024 chars, no
 unquoted ': '), every relative .md link resolves, no em or en dashes, no names from
 real campaigns or published settings, SKILL.md under 130 lines; one version across the
-Claude and ChatGPT manifests, and the ChatGPT listing within OpenAI's field and icon limits.
+Claude, ChatGPT and Grok manifests, and the ChatGPT listing within OpenAI's field and icon limits.
 """
 import pathlib, re, sys
 
@@ -87,10 +87,12 @@ claude = load("plugins/questmaster-vtt/.claude-plugin/plugin.json")
 claude_market = load(".claude-plugin/marketplace.json")
 codex = load("plugins/questmaster-vtt/.codex-plugin/plugin.json")
 codex_market = load(".agents/plugins/marketplace.json")
+grok = load("plugins/questmaster-vtt/.grok-plugin/plugin.json")
 versions = {
     ".claude-plugin/plugin.json": claude.get("version"),
     ".claude-plugin/marketplace.json": next((p.get("version") for p in claude_market.get("plugins", []) if p.get("name") == "questmaster-vtt"), None),
     ".codex-plugin/plugin.json": codex.get("version"),
+    ".grok-plugin/plugin.json": grok.get("version"),
 }
 if len(set(versions.values())) != 1:
     errors.append(f"versions differ: {versions}")
@@ -164,6 +166,8 @@ for rel in ui.get("screenshots", []):
         errors.append(f"{CODEX}: screenshot {rel!r} must be a PNG under ./assets/")
     elif f.stat().st_size > 5 * 1024 * 1024 or max(image_size(f) or (0, 0)) > 4096:
         errors.append(f"{CODEX}: screenshot {rel!r} is over 5 MiB or 4096 px")
+if grok.get("name") != "questmaster-vtt" or not (REPO / "plugins/questmaster-vtt" / str(grok.get("logo", ""))).is_file():
+    errors.append("plugins/questmaster-vtt/.grok-plugin/plugin.json: name must be questmaster-vtt and logo an existing file")
 for key in ("skills", "mcpServers"):
     if not (PLUGIN / str(codex.get(key, ""))).exists():
         errors.append(f"{CODEX}: {key} path {codex.get(key)!r} does not exist")
