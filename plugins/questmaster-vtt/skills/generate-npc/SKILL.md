@@ -1,6 +1,6 @@
 ---
 name: generate-npc
-description: "A workflow for creating a play-ready NPC in a QuestMaster campaign, with a performable voice, a want, a fear, a secret and hooks across the campaign, drafted with upsert_npc and linked to its faction and location, plus optional combat stats through set_npc_statblock and a pointer to its portrait in the app. Use when the DM asks for a new character, ally, villain, contact, quest-giver or background figure, a small cast for a location, or a fuller version of an existing NPC."
+description: "A workflow for creating a play-ready NPC in a QuestMaster campaign, with a performable voice, a want, a fear, a secret and hooks across the campaign, drafted with upsert_npc and linked to its faction and location, plus optional combat stats through set_npc_statblock and an optional portrait. Use when the DM asks for a new character, ally, villain, contact, quest-giver or background figure, a small cast for a location, or a fuller version of an existing NPC."
 ---
 
 # Generate NPC
@@ -36,9 +36,10 @@ to where they live and whom they serve.
 6. **Recap and ask.** `get_changeset`, then tell the DM in plain words what is new, which
    fields players can see and which stay DM-only. Ask, then `request_approval`. Nothing is
    saved until it returns status `applied`.
-7. **Portrait, if wanted.** Portraits are made in the app, not by a tool: once the NPC is
-   approved, tell the DM to press Generate from description on its portrait (it runs on
-   their own image key). A vivid `appearance` makes a better picture.
+7. **Portrait, if wanted.** If this connection has a portrait tool, use it once the NPC is
+   approved: it needs the saved NPC's id, never a draft ref, and runs on the owner's own
+   image key. Otherwise tell the DM to press Generate from description on its portrait in
+   the app. A vivid `appearance` makes a better picture either way.
 8. **Hand back.** Introducing the NPC, performing the voice, pushing any staged secret about
    them and changing their status as play unfolds all stay the DM's.
 

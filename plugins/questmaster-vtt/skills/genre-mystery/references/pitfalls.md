@@ -40,7 +40,7 @@ Each entry names a failure mode the assistant should catch in the DM's prep or i
 ## Too many suspects
 
 - **Symptom:** Nine suspects, and the players cannot keep them straight.
-- **Fix:** Three to five suspects is plenty. Give each a distinct trade, look and tell. Offer a `save_monitor_preset` with their portraits as a suspect board for the table screen (the DM makes portraits in the app).
+- **Fix:** Three to five suspects is plenty. Give each a distinct trade, look and tell. Offer a `save_monitor_preset` with their portraits as a suspect board for the table screen (from the portrait tool where this connection has one, or the app).
 
 ## The invisible culprit
 

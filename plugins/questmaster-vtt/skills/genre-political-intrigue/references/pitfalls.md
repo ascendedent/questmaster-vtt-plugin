@@ -5,7 +5,7 @@ Each entry names a failure mode the assistant should watch for in the DM's prep 
 ## The fog of names
 
 - **Symptom:** Players cannot remember who anyone is. Every session opens with "wait, which one was the duke?"
-- **Fix:** No more than two or three new named NPCs per session. Give each faction one visual signature (a colour, a badge, a smell) and repeat it every time a member appears. Offer the DM a one-page cast list as a `save_monitor_preset` with their portraits (the DM makes portraits in the app), so the table screen can show who is who.
+- **Fix:** No more than two or three new named NPCs per session. Give each faction one visual signature (a colour, a badge, a smell) and repeat it every time a member appears. Offer the DM a one-page cast list as a `save_monitor_preset` with their portraits (from the portrait tool where this connection has one, or the app), so the table screen can show who is who.
 
 ## The obvious villain
 

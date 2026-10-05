@@ -17,7 +17,7 @@ of it, for commercial purposes, such as bundling it into a paid product or servi
 ## Everything else: MIT
 
 The manifests, configuration and evals (`.claude-plugin/`, `.codex-plugin/`, `.agents/`,
-`.grok-plugin/`, `.mcp.json`, `evals/`, `scripts/`, and the README files) are licensed under the MIT License:
+`.grok-plugin/`, `.mcp.json`, `.mcp.full.json`, `evals/`, `scripts/`, and the README files) are licensed under the MIT License:
 
 ```
 MIT License

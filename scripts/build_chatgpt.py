@@ -3,8 +3,9 @@
 
 Writes dist/questmaster-vtt-chatgpt-<version>.zip for the Plugins page of the OpenAI
 Platform dashboard. The archive holds the plugin's contents at its root:
-.codex-plugin/plugin.json, .mcp.json, skills/, the assets the manifest names, and
-LICENSE.md. The Claude-only parts (.claude-plugin/, agents/, evals/) stay out. Same
+.codex-plugin/plugin.json, the MCP config it names (.mcp.full.json: the full
+endpoint, /api/mcp/full, with portraits), skills/, the assets the manifest names,
+and LICENSE.md. The Claude-only parts (.claude-plugin/, agents/, evals/) stay out. Same
 skills as the Claude plugin, so one release feeds both. Lint runs first, and the
 archive is reproducible (sorted entries, fixed timestamps).
 """
@@ -20,7 +21,8 @@ manifest = json.loads((PLUGIN / ".codex-plugin" / "plugin.json").read_text(encod
 ui = manifest["interface"]
 assets = {ui[k] for k in ("composerIcon", "logo", "logoDark") if ui.get(k)} | set(ui.get("screenshots", []))
 
-entries = {".codex-plugin/plugin.json": PLUGIN / ".codex-plugin" / "plugin.json", ".mcp.json": PLUGIN / ".mcp.json"}
+mcp = manifest["mcpServers"].removeprefix("./")
+entries = {".codex-plugin/plugin.json": PLUGIN / ".codex-plugin" / "plugin.json", mcp: PLUGIN / mcp}
 for f in sorted((PLUGIN / "skills").rglob("*")):
     if f.is_file() and not f.name.startswith("."):
         entries[f.relative_to(PLUGIN).as_posix()] = f

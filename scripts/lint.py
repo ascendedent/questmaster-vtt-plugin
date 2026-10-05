@@ -168,6 +168,20 @@ for rel in ui.get("screenshots", []):
         errors.append(f"{CODEX}: screenshot {rel!r} is over 5 MiB or 4096 px")
 if grok.get("name") != "questmaster-vtt" or not (REPO / "plugins/questmaster-vtt" / str(grok.get("logo", ""))).is_file():
     errors.append("plugins/questmaster-vtt/.grok-plugin/plugin.json: name must be questmaster-vtt and logo an existing file")
+# MCPSURF1: Claude reads .mcp.json, the standard endpoint (its directory listing
+# makes no images); ChatGPT/Codex and Grok name .mcp.full.json, the full one.
+def mcp_url(rel):
+    try:
+        servers = json.loads((PLUGIN / rel).read_text(encoding="utf-8"))["mcpServers"]
+        return [s.get("url") for s in servers.values()]
+    except Exception as e:  # noqa: BLE001
+        return [f"unreadable: {e}"]
+if mcp_url(".mcp.json") != ["https://questmastervtt.com/api/mcp"]:
+    errors.append(f".mcp.json must point only at https://questmastervtt.com/api/mcp (Claude): {mcp_url('.mcp.json')}")
+for label, m in ((".codex-plugin", codex), (".grok-plugin", grok)):
+    rel = str(m.get("mcpServers", "")).removeprefix("./")
+    if mcp_url(rel) != ["https://questmastervtt.com/api/mcp/full"]:
+        errors.append(f"{label}/plugin.json mcpServers must name a file pointing only at https://questmastervtt.com/api/mcp/full: {rel!r} {mcp_url(rel)}")
 for key in ("skills", "mcpServers"):
     if not (PLUGIN / str(codex.get(key, ""))).exists():
         errors.append(f"{CODEX}: {key} path {codex.get(key)!r} does not exist")

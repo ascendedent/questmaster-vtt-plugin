@@ -18,7 +18,7 @@ Write this in chat first so the DM can react to it, then map it onto `upsert_npc
 
 **Appearance** (`appearance`, player-visible). 3 to 5 sentences, specific and visual. One
 detail is unusual or contradicts expectations: the thing a player describes to a friend
-next week. This text also feeds the app's portrait generator, so name colors, build, clothing, age.
+next week. This text also feeds the portrait generator, so name colors, build, clothing, age.
 
 **Personality** (`personality`)
 - Demeanor: how they come across at first meeting, before the party knows them.

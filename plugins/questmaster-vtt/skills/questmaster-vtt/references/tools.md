@@ -63,7 +63,7 @@ around it. `whoami` lists what this connection has.
 | A rules item as the campaign's copy | `import_catalog_item` |
 | An equipment pack | `define_equipment_pack` |
 | A shop and its shelf | `upsert_shop` (never while open at the table) |
-| A portrait for an NPC or monster | No tool: the DM presses Generate from description on its portrait in the app (their own image key). Write a vivid appearance first. |
+| A portrait for an NPC or monster | The portrait tool, where this connection has one (ChatGPT, Grok, Gemini): on the saved NPC or monster, on the owner's own image key. Claude connections have none: the DM presses Generate from description on its portrait in the app. Either way, write a vivid appearance first. |
 
 ## Maps and the table screen (maps)
 
