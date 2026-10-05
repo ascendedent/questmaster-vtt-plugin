@@ -1,0 +1,1 @@
+{"status":"awaiting_approval","changesetId":"c5000000-0000-4000-8000-000000000001","approvalUrl":"https://questmastervtt.com/agent/changes/c5000000-0000-4000-8000-000000000001","note":"Nothing is saved yet. The DM approves on the Agent changes page."}

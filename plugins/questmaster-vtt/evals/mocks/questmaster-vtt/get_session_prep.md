@@ -1,0 +1,1 @@
+{"session":{"id":"5e000000-0000-4000-8000-000000000008","number":8,"title":"Session 8","played":false},"threads":[{"id":"7e000000-0000-4000-8000-000000000002","title":"The lighthouse keeper vanished"}],"plotBeats":[],"secrets":[],"encounters":[]}

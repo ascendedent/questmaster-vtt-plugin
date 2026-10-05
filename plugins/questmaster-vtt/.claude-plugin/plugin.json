@@ -1,0 +1,23 @@
+{
+  "name": "questmaster-vtt",
+  "displayName": "QuestMaster VTT",
+  "version": "0.1.0",
+  "description": "Prep your QuestMaster VTT campaign with Claude. It reads your campaign, drafts NPCs, factions, plot, sessions, fights, items, maps and table screens for you to approve, and follows genre packs and writing styles. Live play stays yours.",
+  "author": {
+    "name": "QuestMaster VTT",
+    "url": "https://questmastervtt.com"
+  },
+  "homepage": "https://questmastervtt.com/help/agents",
+  "repository": "https://github.com/ascendedent/questmaster-vtt-plugin",
+  "license": "CC-BY-NC-4.0 AND MIT",
+  "keywords": [
+    "dnd",
+    "ttrpg",
+    "dungeon master",
+    "campaign prep",
+    "vtt",
+    "questmaster"
+  ],
+  "privacyPolicyUrl": "https://questmastervtt.com/legal/privacy",
+  "termsOfServiceUrl": "https://questmastervtt.com/legal/terms"
+}

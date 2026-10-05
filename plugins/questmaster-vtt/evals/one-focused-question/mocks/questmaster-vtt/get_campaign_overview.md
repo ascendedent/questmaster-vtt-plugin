@@ -1,0 +1,1 @@
+{"campaign":{"id":"c0ffee00-0000-4000-8000-000000000001","name":"Untitled Campaign","setting":"","tone":"","edition":"5e 2024"},"counts":{"npcs":0,"factions":0,"threads":0,"sessions":0},"activeThreads":[],"currentArc":null,"currentModule":null,"nextSession":null}

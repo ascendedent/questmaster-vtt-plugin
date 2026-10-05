@@ -1,0 +1,1 @@
+{"kind":"npc","id":"e0000000-0000-4000-8000-000000000007","name":"Captain Vey","role":"Harbor captain of the Cinder Breakwater","personality":{"demeanor":"Gruff","coreTrait":"Loyal to her crew","flaw":"Gambles","speechPattern":"Answers questions with questions"},"factionId":null}

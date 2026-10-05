@@ -1,0 +1,1 @@
+{"party":[{"id":"c1000000-0000-4000-8000-000000000001","name":"Mira Vosk","level":5,"class":"Rogue","hp":38,"ac":15},{"id":"c1000000-0000-4000-8000-000000000002","name":"Torvald","level":5,"class":"Fighter","hp":52,"ac":18},{"id":"c1000000-0000-4000-8000-000000000003","name":"Sefa","level":5,"class":"Cleric","hp":41,"ac":17}],"xpBudgets":{"low":1500,"moderate":2250,"high":3300}}

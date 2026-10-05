@@ -1,0 +1,16 @@
+{
+  "name": "questmaster-vtt",
+  "description": "The official QuestMaster VTT plugin for Claude: campaign prep through your QuestMaster account, with genre packs and writing styles.",
+  "owner": {
+    "name": "QuestMaster VTT",
+    "url": "https://questmastervtt.com"
+  },
+  "plugins": [
+    {
+      "name": "questmaster-vtt",
+      "source": "./plugins/questmaster-vtt",
+      "description": "Prep your QuestMaster VTT campaign with Claude: NPCs, factions, plot, sessions, fights, items, maps and table screens, drafted for you to approve.",
+      "version": "0.1.0"
+    }
+  ]
+}

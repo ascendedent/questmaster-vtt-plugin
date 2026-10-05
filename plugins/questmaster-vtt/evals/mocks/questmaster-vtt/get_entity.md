@@ -1,0 +1,1 @@
+{"kind":"faction","id":"fa000000-0000-4000-8000-000000000001","name":"The Tidewardens","publicMission":"Keep the harbors safe and the tithes fair.","realAgenda":"dmOnly: skim the salt tithe to fund a private fleet.","members":[]}
