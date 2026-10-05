@@ -11,6 +11,7 @@ around it. `whoami` lists what this connection has.
 |---|---|
 | What can this connection do, which campaigns | `whoami`, `list_campaigns` |
 | The campaign at a glance (always first) | `get_campaign_overview` |
+| Everything in the campaign in one read (ids and short fields per kind) | `get_campaign_snapshot` |
 | Find something by name before creating it | `search_campaign` |
 | Browse one kind of record | `list_entities` (kinds: npc, faction, thread, session, arc, module, area, location, encounter, item, homebrew, monster, shop, map, continent, secret, draft) |
 | Read one record in full, with its links | `get_entity` |
@@ -26,6 +27,7 @@ around it. `whoami` lists what this connection has.
 |---|---|---|
 | An NPC | `upsert_npc` | `personality` {demeanor, coreTrait, flaw, speechPattern}, `motivation` {immediate, longTerm, fear}; `secret`, `notes` are DM-only |
 | A faction | `upsert_faction` | `publicMission` (what the world believes) vs `realAgenda` (DM-only) |
+| Money in or out of a faction's treasury | `adjust_faction_treasury` | a saved faction; amount like "250 gp" or "-40 gp"; the ledger shows the reason |
 | A plot thread | `upsert_thread` | urgency; `plannedSessionId` schedules it; connected ids replace the whole list |
 | A story arc | `upsert_arc` | numbered when approved |
 | A beat on the plot board | `upsert_plot_node` | needs `arcId`; a beat shown to players can't change |
@@ -63,7 +65,7 @@ around it. `whoami` lists what this connection has.
 | A rules item as the campaign's copy | `import_catalog_item` |
 | An equipment pack | `define_equipment_pack` |
 | A shop and its shelf | `upsert_shop` (never while open at the table) |
-| A portrait for an NPC or monster | The portrait tool, where this connection has one (ChatGPT, Grok, Gemini): on the saved NPC or monster, on the owner's own image key. Claude connections have none: the DM presses Generate from description on its portrait in the app. Either way, write a vivid appearance first. |
+| A picture: an NPC or monster portrait, item or shop art, a scene for the screen, a new battle map | The picture tool, where this connection has one (ChatGPT, Grok, Gemini): on the owner's own image key, for saved records. Claude connections have none: the DM makes pictures in the app (Generate from description on a portrait). Either way, write a vivid appearance or description first. |
 
 ## Maps and the table screen (maps)
 
@@ -74,9 +76,11 @@ around it. `whoami` lists what this connection has.
 | How modules, areas and maps connect | `get_world_graph` |
 | A continent's places | `get_continent_gazetteer` (keep its attribution; land and water aren't known) |
 | Rename or file a map | `update_map` |
-| Travel between maps | `arrange_maps` (two-way by default) |
+| Travel between maps, and pins: markers, doors to interiors, floors of a building | `arrange_maps` (exits two-way by default; floors link up and down on their own) |
+| Remove a prep map | `delete_entity` kind map (refused once it has been used at the table) |
 | Terrain, hazards, labels on a map | `annotate_map` (hidden until shown) |
 | Link a continent place to a module or map | `link_continent_location` |
+| Rename, move, add or remove continent labels; recolour regions | `edit_continent` (re-rendered by Nortantis: start with ops, then call with the jobId until it drafts; never land or water) |
 | Prepared screens and the running order | `get_screen_prep`, `save_monitor_preset`, `organize_presets`, `build_cue_list` |
 
 Anything on the players' screens right now is refused. That is by design.

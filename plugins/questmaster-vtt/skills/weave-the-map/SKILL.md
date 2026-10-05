@@ -24,9 +24,11 @@ The DM gets a campaign whose places connect: continent places linked to modules 
    - Continent links: `link_continent_location` {`locationId` from the gazetteer, `moduleId`, `mapId`}. A settlement linked to a module also gets its area there, created on approval, so file maps into that area in a follow-up draft. `null` clears a link.
    - Filing maps: `update_map` {`mapId`, `moduleId` (the map gets its own area in that module; `null` unlinks) OR `areaId` (attach to an existing area; `null` sends it back to its own), `name`, `environment`, `feetPerSquare`, `diagonalRule`}.
    - Exits: `arrange_maps` {`exits`: [{`mapId`, `direction`, `to`}]}. Two-way by default: the other map gets the opposite exit unless it already has one there. `to: null` removes an exit.
+   - Pins: `arrange_maps` {`pins`: [{`parentMapId`, `childMapId`, `kind`, `x`, `y`}]}: `pin` marks a place on an overview map, `door` makes the child an interior of the parent, `floor` makes it a floor of the parent's building with `floorIndex` (0 ground, -1 basement, 1 upstairs; up and down exits link on their own). `x`, `y` are where on the parent (0 to 1). `removePins` takes pin ids from `get_map_outline`.
+   - Continent labels and colours: `edit_continent` with `ops` (rename, move, add or remove labels; recolour regions) renders with Nortantis; call it again with the `jobId` until it drafts. Land and water never change.
    - Annotations: `annotate_map` {`mapId`, `add`, `update`, `remove`}. First `view_map` the map (zoom with `region` for precision) and read the coordinates off its numbered grid: columns along the top and rows down the left are the same `gx` and `gy` the geometry takes. Never guess where a feature is; if the picture doesn't settle it, ask the DM. Geometry stays inside the grid size.
 5. **Recap and approve.** `get_changeset`, show the weave table and each map's annotations, flag any annotation `text` players will read once revealed, ask, then `request_approval`. Never call it saved before `applied`.
-6. **Hand over.** Putting a map on the players' screens, revealing, moving tokens, and anything about the continent itself (generating it, its regions, its look) are the DM's, in the app.
+6. **Hand over.** Putting a map on the players' screens, revealing, moving tokens, generating a continent, and its land and water are the DM's, in the app.
 
 ## What to produce
 
