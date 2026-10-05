@@ -23,3 +23,7 @@ Threads
 
 Sessions: 1 to 7 played; 5e000000-0000-4000-8000-000000000008 Session 8 unplayed, no beats yet. Last recap (session 7): the party found Oren's boat adrift, empty, its lantern still warm.
 Party: Mira Vosk (Rogue 5), Torvald (Fighter 5), Sefa (Cleric 5).
+
+Maps (battle maps; kind map)
+- 9a000000-0000-4000-8000-000000000001 Graycliff Catacombs (module Port Cinder, area Graycliff; 50x50 squares; exit up to The Ash Shrine; no annotations; its picture is unavailable in this test).
+- 9a000000-0000-4000-8000-000000000002 The Ash Shrine (module Port Cinder, area Graycliff; exit down to Graycliff Catacombs).

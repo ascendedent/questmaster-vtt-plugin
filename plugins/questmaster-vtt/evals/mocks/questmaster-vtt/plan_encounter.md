@@ -1,1 +1,1 @@
-{"drafted":true,"changesetId":"c5000000-0000-4000-8000-000000000001","ref":"encounter:1","rating":{"xp":2100,"difficulty":"moderate"}}
+{"drafted": true, "changesetId": "c5000000-0000-4000-8000-000000000001", "ref": "encounter:1", "rating": {"xp": 2100, "difficulty": "moderate"}, "approveUrl": "https://questmastervtt.com/agent/changes/c5000000-0000-4000-8000-000000000001", "approveNote": "Whenever you tell the DM something is waiting for approval, give them approveUrl as a clickable link in that same message. They can review and approve there at any time."}

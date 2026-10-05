@@ -1,0 +1,1 @@
+{"id":"9a000000-0000-4000-8000-000000000001","name":"Graycliff Catacombs","sizeInSquares":{"w":50,"h":50},"feetPerSquare":5,"exits":{"up":{"mapId":"9a000000-0000-4000-8000-000000000002","name":"The Ash Shrine"}},"pins":[],"annotations":[],"fights":[],"onPlayersScreens":false}

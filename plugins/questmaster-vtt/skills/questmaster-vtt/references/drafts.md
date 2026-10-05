@@ -33,6 +33,16 @@ remove or unlink, and drafts nothing. Tell the DM before drafting the real delet
 Some deletes are refused on purpose (a played session's beats, a secret already
 pushed, a fight that ran, a shop open at the table).
 
+## The approval link, every time
+
+Every draft call returns `approveUrl`, the page where the DM reviews and approves the
+open draft (`request_approval` and `get_changeset` return it too). Any message that
+says something is drafted, pending, or waiting for approval includes that link as a
+clickable URL, in the same message. That holds mid-build too: if you stop to ask a
+question with changes already drafted, the link goes in the question. The DM can press
+Ready to approve on that page at any time; anything you draft after that starts a new
+draft with a new link.
+
 ## Asking for approval
 
 1. `get_changeset`: read your draft back.
