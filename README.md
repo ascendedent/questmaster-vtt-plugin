@@ -83,6 +83,15 @@ and [terms](https://questmastervtt.com/legal/terms) cover the QuestMaster side.
 icon and the license; the Claude-only agents and evals stay out) for the Plugins page of
 the OpenAI Platform dashboard.
 
+## Evals
+
+`plugins/questmaster-vtt/evals/` holds `claude plugin eval` cases. Every case runs
+against the mocks in `evals/mocks/questmaster-vtt/` (a fictional campaign, "The Ashfall
+Reach"), never a real QuestMaster account; a case overrides suite mocks with its own
+`mocks/` folder. Run the eval command from the plugin folder with `--no-publish`
+(add `--runs 1` for a quick pass; the default is 3 runs per arm with a no-plugin
+baseline).
+
 ## License
 
 The writing (skills and agents) is CC BY-NC 4.0; manifests, configuration and evals
