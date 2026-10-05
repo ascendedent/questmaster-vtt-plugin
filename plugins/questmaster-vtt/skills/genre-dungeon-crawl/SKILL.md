@@ -42,7 +42,7 @@ If the dungeon's builder and current occupants are not established, ask the DM o
 
 ## Building it in QuestMaster
 
-- **Read first:** `get_campaign_overview`, `search_campaign` for any existing site, faction or NPC, and `get_world_graph` to see which modules, areas and maps exist. For an existing map, `get_map_outline` shows its grid, its travel exits and where they lead, its pins to interiors and floors, and its annotations.
+- **Read first:** `get_campaign_overview`, `search_campaign` for any existing site, faction or NPC, and `get_world_graph` to see which modules, areas and maps exist. For an existing map, `get_map_outline` shows its grid, its travel exits and where they lead, its pins to interiors and floors, and its annotations; `view_map` shows the map itself with its grid numbered, so you can key rooms and place terrain by what is actually drawn.
 - **Structure:** one `upsert_module` for the dungeon, one `upsert_area` per level (areaType dungeon, with dangerLevel), and one `upsert_location` per keyed room, with locationIdCode (A1, A2, B7), a player-visible description and dmNotes for the truth.
 - **Loops and verticality:** draft doors as location exits (N, NE, E and so on, plus up and down). Exits are reciprocal by default, so set reciprocalExits false for one-way routes (a chute, a portcullis that only lifts from inside). Check each level has at least two loops before drafting.
 - **Level maps:** when each level has its own battle map, connect them with `arrange_maps` (up and down between levels, two-way by default) and file each map under its level's area with `update_map`.

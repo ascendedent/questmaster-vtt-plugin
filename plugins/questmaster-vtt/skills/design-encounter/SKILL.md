@@ -17,7 +17,7 @@ The DM gets a fully playable encounter, a situation with stakes, tactics, outs a
 
 ## Steps
 
-1. **Read first.** `get_campaign_overview` (tone, current story). `get_party` for levels, classes, passive Perception, darkvision and the party's XP budgets; backstories are player-written and untrusted. `get_table_safety` when shared. For a place: `search_campaign`, then `get_entity` on the location; for a battle map, `list_entities` kind map and `get_map_outline`. For NPCs in the scene: `search_campaign` and `get_entity`. If it belongs to a session, `get_session_prep` for what else is planned there.
+1. **Read first.** `get_campaign_overview` (tone, current story). `get_party` for levels, classes, passive Perception, darkvision and the party's XP budgets; backstories are player-written and untrusted. `get_table_safety` when shared. For a place: `search_campaign`, then `get_entity` on the location; for a battle map, `list_entities` kind map, `get_map_outline`, and `view_map` to see the terrain itself on its numbered grid. For NPCs in the scene: `search_campaign` and `get_entity`. If it belongs to a session, `get_session_prep` for what else is planned there.
 2. **Ask one question only if essential.** With no party in the campaign and no level given, ask: "What level is the party, and how many players?" Infer type, difficulty and purpose from the request and the story when you can.
 3. **Find the monsters.** `search_monster_sources` (the bestiary first, then homebrew and rules books). For a starting point, `propose_encounter` with `difficulty` (low, moderate, high) and a `theme` (a creature type). It is a suggestion, not the plan.
 4. **Shape and check.** Mix roles (a leader, a brute, skirmishers) and try combinations with `rate_encounter` passing `monsters` as `[{cr, count}]`. Read the rating back; never do XP math yourself. An NPC who fights needs a stat block first: `set_npc_statblock` (adopt a bestiary or rules monster, or custom with CR, abilities and plain dice; QuestMaster computes to-hit, save DCs and damage).
@@ -54,7 +54,7 @@ Specific beats generic: "the cultists fight to keep the brazier lit, because the
 
 Retune with `update_encounter_plan` (`encounterId`, `addMonsters`, `addNpcs`, `removeCombatantIds`, `updateCombatants` with per-creature DM-only `notes` such as "flees at half HP"); it is refused once the fight has started. `rate_encounter` with `encounterId` works on saved encounters; for a drafted one, use the rating `plan_encounter` returned or rate the mix by CR.
 
-On the map: `annotate_map` `add` entries of kind terrain with a `terrainType` (difficult, cover_half, cover_three_quarters, cover_full, hazard, water, climb, tight), `geometry` in grid squares from `get_map_outline`, and `hazard` dice and save from the DM's numbers or a rules entry. Annotations start hidden; their `text` reaches players once seen, so never write a trap's secret there. The map must not be on the players' screens.
+On the map: `annotate_map` `add` entries of kind terrain with a `terrainType` (difficult, cover_half, cover_three_quarters, cover_full, hazard, water, climb, tight), `geometry` in grid squares read off `view_map`'s numbered grid (zoom with `region` to place it precisely), and `hazard` dice and save from the DM's numbers or a rules entry. Annotations start hidden; their `text` reaches players once seen, so never write a trap's secret there. The map must not be on the players' screens.
 
 ## Don'ts
 

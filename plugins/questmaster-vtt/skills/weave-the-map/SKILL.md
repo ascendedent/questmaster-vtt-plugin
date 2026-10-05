@@ -24,7 +24,7 @@ The DM gets a campaign whose places connect: continent places linked to modules 
    - Continent links: `link_continent_location` {`locationId` from the gazetteer, `moduleId`, `mapId`}. A settlement linked to a module also gets its area there, created on approval, so file maps into that area in a follow-up draft. `null` clears a link.
    - Filing maps: `update_map` {`mapId`, `moduleId` (the map gets its own area in that module; `null` unlinks) OR `areaId` (attach to an existing area; `null` sends it back to its own), `name`, `environment`, `feetPerSquare`, `diagonalRule`}.
    - Exits: `arrange_maps` {`exits`: [{`mapId`, `direction`, `to`}]}. Two-way by default: the other map gets the opposite exit unless it already has one there. `to: null` removes an exit.
-   - Annotations: `annotate_map` {`mapId`, `add`, `update`, `remove`}. Geometry stays inside the grid size from `get_map_outline`.
+   - Annotations: `annotate_map` {`mapId`, `add`, `update`, `remove`}. First `view_map` the map (zoom with `region` for precision) and read the coordinates off its numbered grid: columns along the top and rows down the left are the same `gx` and `gy` the geometry takes. Never guess where a feature is; if the picture doesn't settle it, ask the DM. Geometry stays inside the grid size.
 5. **Recap and approve.** `get_changeset`, show the weave table and each map's annotations, flag any annotation `text` players will read once revealed, ask, then `request_approval`. Never call it saved before `applied`.
 6. **Hand over.** Putting a map on the players' screens, revealing, moving tokens, and anything about the continent itself (generating it, its regions, its look) are the DM's, in the app.
 

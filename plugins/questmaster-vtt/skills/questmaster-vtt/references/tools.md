@@ -70,6 +70,7 @@ around it. `whoami` lists what this connection has.
 | Job | Tool |
 |---|---|
 | Read a map as text | `get_map_outline` |
+| See a map as a picture with its grid (numbered columns and rows, annotations outlined); zoom with `region` | `view_map` |
 | How modules, areas and maps connect | `get_world_graph` |
 | A continent's places | `get_continent_gazetteer` (keep its attribution; land and water aren't known) |
 | Rename or file a map | `update_map` |
